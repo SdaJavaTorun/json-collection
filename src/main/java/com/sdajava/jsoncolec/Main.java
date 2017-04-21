@@ -1,8 +1,8 @@
 package com.sdajava.jsoncolec;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.google.gson.Gson;
+
+import java.util.*;
 
 public class Main {
 
@@ -14,6 +14,25 @@ public class Main {
                         new Employee("adam2", "Waecha2", 2, 233222.0),
                         new Employee("adam3", "Waecha3", 3, 222222.0),
                         new Employee("adam4", "Warzecha4", 4, 233222.0));
+
+        Gson gson = new Gson();
+        //System.out.println(gson.toJson(employeeList));
+
+       // Boss boss1 =
+            //    new Boss(1, "Artur", "Rozgowski", employeeList);
+
+        //System.out.println(gson.toJson(boss1));
+
+        Map<Integer, List<Employee>> employeeMap = new HashMap<Integer, List<Employee>>();
+
+        employeeMap.put(1, employeeList);
+        employeeMap.put(2, employeeList);
+        employeeMap.put(3, employeeList);
+
+        Boss boss =
+                new Boss(1, "Artur", "Rozgowski", employeeMap);
+        System.out.println(gson.toJson(boss));
+        //employeeMap.put(new Employee())
 
 
     }
