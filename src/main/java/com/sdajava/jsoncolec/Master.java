@@ -1,22 +1,20 @@
 package com.sdajava.jsoncolec;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class Boss {
+public class Master {
 
     private Integer id;
     private String firstName;
     private String lastName;
-    private Map<Integer, List<Employee>> map = new HashMap<>();
+    private List<Boss> bosses = new ArrayList<>();
 
-    public Boss(Integer id, String firstName, String lastName,
-                Map<Integer, List<Employee>> workers) {
+    public Master(Integer id, String firstName, String lastName, List<Boss> bosses) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.map = workers;
+        this.bosses = bosses;
     }
 
     public Integer getId() {
@@ -43,5 +41,11 @@ public class Boss {
         this.lastName = lastName;
     }
 
+    public List<Boss> getBosses() {
+        return bosses;
+    }
 
+    public void setBosses(List<Boss> bosses) {
+        this.bosses = bosses;
+    }
 }

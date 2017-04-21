@@ -31,9 +31,20 @@ public class Main {
 
         Boss boss =
                 new Boss(1, "Artur", "Rozgowski", employeeMap);
-        System.out.println(gson.toJson(boss));
-        //employeeMap.put(new Employee())
+        //System.out.println(gson.toJson(boss));
 
+        Boss boss2 =
+                new Boss(2, "Artur", "Rozgowski", employeeMap);
+        Boss boss3 =
+                new Boss(3, "Artur", "Rozgowski", employeeMap);
+
+        List<Boss> bossesList =
+                Arrays.asList(boss, boss2, boss3);
+
+        Master master =
+                new Master(1, "Mikołaj", "Kopernik", bossesList);
+
+        System.out.println(gson.toJson(master));
 
     }
 }
